@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/bgrosjea/Desktop/workspace/PSlast",
+            "binaryPath": "/home/bgrosjea/Desktop/workspace/PSlast/push_swap",
+            "binaryArgs": []
+        }
+    ]
+}

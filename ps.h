@@ -6,7 +6,7 @@
 /*   By: bgrosjea <bgrosjea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 19:41:54 by bgrosjea          #+#    #+#             */
-/*   Updated: 2023/12/22 14:07:49 by bgrosjea         ###   ########.fr       */
+/*   Updated: 2023/12/23 13:23:35 by bgrosjea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct stock
 }	t_stock;
 
 
-void	ft_error(int argc, char **argv);
+void	ft_error(int argc);
 void    ft_check(int argc, char **argv);
 int     ft_check_cost_diff(int cost, int cost2);
 void	get_right_pos_pos(t_stock *costs, t_Node **src, t_Node **dest);
@@ -50,7 +50,7 @@ void    sb(t_Node **b, int boul);
 void    rb(t_Node **b, int boul);
 int		ft_find_div(int max);
 void    pb(t_Node **b, t_Node **a);
-int		ft_find_best_rank(t_Node **a, t_Node **b);
+int		ft_find_best_rank(t_Node **a, int rank_b);
 void    rrb(t_Node **b, int boul);
 void    rr(t_Node **a, t_Node **b);
 void    ss(t_Node **a, t_Node **b);

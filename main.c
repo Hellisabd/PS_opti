@@ -6,7 +6,7 @@
 /*   By: bgrosjea <bgrosjea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 10:53:11 by bgrosjea          #+#    #+#             */
-/*   Updated: 2023/12/22 19:47:08 by bgrosjea         ###   ########.fr       */
+/*   Updated: 2023/12/23 14:15:59 by bgrosjea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,20 +87,20 @@ bool	ft_check_back(t_Node *a)
 	return (false);
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
 	t_Node  *a;
 
-	char *argv[3] = {"", "1  5"};
-	 int		argc;
-	 argc = 2;
+	// char *argv[3] = {"", "11 20 4 1 17 8 16 3 5 19 13 12 7 2 18 15 14 6 9 10 "};
+	//  int		argc;
+	//  argc = 2;
 	t_Node  *b;
 	int		size;
 
 	size = 0;
 	a = NULL;
 	b = NULL;
-	ft_error(argc, argv);
+	ft_error(argc);
 	ft_check(argc, argv);
 	a = ft_fill_a(a, argc, argv);
 	size = ft_check_same(&a, size);

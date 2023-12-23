@@ -6,22 +6,22 @@
 /*   By: bgrosjea <bgrosjea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 12:40:27 by bgrosjea          #+#    #+#             */
-/*   Updated: 2023/12/22 19:44:13 by bgrosjea         ###   ########.fr       */
+/*   Updated: 2023/12/23 13:40:06 by bgrosjea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_find_best_rank(t_Node **a, t_Node **b)
+int	ft_find_best_rank(t_Node **a, int rank_b)
 {
 	t_Node	*current_a;
 	int		best_rank;
 
 	current_a = *a;
 	best_rank = find_max_rank_a(*a);
-	while (current_a && *b)
+	while (current_a)
 	{
-		if ((current_a->rank > (*b)->rank) && (best_rank > current_a->rank))
+		if ((current_a->rank > rank_b) && (best_rank > current_a->rank))
 			best_rank = current_a->rank;
 		current_a = current_a->next;
 	}
@@ -34,10 +34,16 @@ void	ft_final_sort(t_Node **a, t_Node **b)
 
 	if (!(*b) || !b)
 		return ;
+	// if ((*b)->next && ft_find_best_rank(a, (*b)->next->rank) == (*a)->rank)
+	// {
+	// 	sb(b, 1);
+	// 	pa(a, b);
+	// }
 	while (ft_lstlast(*b)->rank > (*b)->rank
 		&& ft_lstlast(*b)->rank < (*a)->rank)
 		rrb(b, 1);
-	best_rank = ft_find_best_rank(a, b);
+	//if (*b)
+		best_rank = ft_find_best_rank(a, (*b)->rank);
 	while ((*a)->rank != best_rank && *b)
 	{
 		if (find_r_or_rr(a, best_rank))

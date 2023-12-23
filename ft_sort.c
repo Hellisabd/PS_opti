@@ -6,7 +6,7 @@
 /*   By: bgrosjea <bgrosjea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:41:59 by bgrosjea          #+#    #+#             */
-/*   Updated: 2023/12/22 19:45:57 by bgrosjea         ###   ########.fr       */
+/*   Updated: 2023/12/23 14:25:41 by bgrosjea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,21 +74,21 @@ void	ft_fill_b(t_Node **a, t_Node **b, int max_rank)
 			{
 				if (!(*a)->next->next->next->next->next)
 					break;
-				pb(b, a);
+				else
+					pb(b, a);
 				if ((*b)->rank <= max_rank)
 					actual++;
 				if ((*b)->next && ((*b)->rank < max_rank) && ((*a)->rank > max_rank + div_max))
 					rr(a, b);
-				if ((*b)->next && ((*b)->rank < max_rank))
+				else if ((*b)->next && ((*b)->rank < max_rank))
 					rb(b, 1);
-				if ((*b)->next && (*b)->rank < (*b)->next->rank)
+				if ((*b)->next && (*b)->rank < (*b)->next->rank && )
+				
+				else if ((*b)->next && (*b)->rank < (*b)->next->rank)
 					sb(b, 1);
-				 while (((*b)->next && (*b)->rank < (*b)->next->rank))
+				while (((*b)->next && (*b)->rank < (*b)->next->rank))
 					 rb(b, 1);
 			}
-			if (0 < ft_find_next_rank(*a, max_rank + div_max))
-				rra(a, 1);
-			else
 				ra(a, 1);
 		}
 	}
@@ -107,7 +107,7 @@ void	ft_sort(t_Node **a, t_Node **b, int max_rank)
 	{
 		ft_final_sort(a, b);
 		pa(a, b);
-		if ((*b) && ft_lstlast(*b)->rank > (*b)->rank)
+		if ((*b) && (*b)->next && ft_lstlast(*b)->rank > (*b)->rank)
 			rrb(b, 1);
 	}
 	if (ft_lstsize(*a) > ft_lstsize(*b) && boul == 1)
